@@ -95,19 +95,33 @@ public class historial2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
+        if(pila.isEmpty()){
+            JOptionPane.showMessageDialog(null, "no a entrado a ninguna pagina");
+        }
+        else if(pila.size()==1){
+             JOptionPane.showMessageDialog(null, "eres el primero");
+        }
+        else{
         temporal.push(pila.peekretorno());
-        pila.pop();
+        pila.pop();}
         
     }//GEN-LAST:event_atrasActionPerformed
 
     private void siguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteActionPerformed
         String a = JOptionPane.showInputDialog("de el nobre a donde iras");
+        if(a.trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "ingrese el nombre de la pagina para continuar");
+        }else{
         pila.push(a);
-        temporal.push(a);
+        temporal.push(a);}
     }//GEN-LAST:event_siguienteActionPerformed
 
     private void estoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estoyActionPerformed
-        JOptionPane.showMessageDialog(null, "El ultimo elemento es: " + pila.peek());
+        if(pila.isEmpty()){
+            JOptionPane.showMessageDialog(null, "no a entrado a ninguna pagina");
+        }
+        else{
+        JOptionPane.showMessageDialog(null, "El ultimo elemento es: " + pila.peek());}
     }//GEN-LAST:event_estoyActionPerformed
 
     private void hsitorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hsitorialActionPerformed

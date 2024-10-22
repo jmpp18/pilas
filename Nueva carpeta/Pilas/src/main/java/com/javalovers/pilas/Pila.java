@@ -34,6 +34,7 @@ public class Pila<T> {
     public T peek() {
         if (isEmpty()) {
             throw new IllegalStateException("La pila está vacía");
+            
         }
         return (T) elementos[tope];
     }
